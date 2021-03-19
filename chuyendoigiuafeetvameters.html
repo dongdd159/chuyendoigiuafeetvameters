@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input" oninput="tranfers()">
+<select name="unit" id="unit">
+    <option value="feet">feet</option>
+    <option value="metters">metters</option>
+</select>
+<p id="result"></p>
+<script>
+    function footToMeter(foot){
+        meter = 0.305 * foot
+        return meter
+    }
+    function meterToFoot(m){
+        feet = 3.279 * m
+        return feet
+    }
+    function tranfers(){
+        let inputnum = document.getElementById("input").value
+        let number = parseInt(inputnum)
+        let unit = document.getElementById("unit").value
+        let result
+        if (unit=="feet"){
+            result = footToMeter(number)
+        }else {
+            result = meterToFoot(number)
+        }
+        let display = document.getElementById("result")
+        display.innerHTML=result
+    }
+</script>
+</body>
+</html>
